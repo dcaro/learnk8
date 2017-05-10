@@ -1,6 +1,6 @@
 # Exercise 1 - Running MySQL in a POD #
 
-To complete this exercise you have to deploy MySQL on Kubernetes with the following characteristics: 
+To complete this exercise you have to deploy MySQL on Kubernetes, using a template file, with the following characteristics: 
 - Deploy a MySQL instance on your Kubernetes cluster in a single pod.
 - The MySQL server shall have a database named "sample".
 - Your instance shall have a user names *mysql* with *mysql* as the password.
@@ -16,8 +16,8 @@ At the end of this exercise, launch MySQL workbench and connect to your deployed
 * Understand the environment variables required by the MySQL container by reading the container documentation [https://hub.docker.com/_/mysql/](https://hub.docker.com/_/mysql/)
 * Review the definition of a service:[https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook#define-a-service](https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook#define-a-service)
 
-<u>Assessment</u>: Connect to MySQL with myworkbench and verify that the connection works
+<u>**Assessment**</u>: Connect to MySQL with myworkbench and verify that the connection works
 
-<u>Estimated time</u>: 45 minutes 
+<u>**Estimated time**</u>: 45 minutes 
 
-<u>Solution</u>: If you need help, you can find the solution of this exercise here: []()
+<u>**Solution**</u>: If you need help, you can find the solution of this exercise here: [solutions/lab1](../solutions/lab1/README.md)
