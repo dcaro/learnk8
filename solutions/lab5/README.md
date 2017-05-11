@@ -109,7 +109,7 @@ spec:
 ```kubectl create -f wordpress-delpoyment.yaml```. 
 
 
-## Commonly seen issues ## 
+## Commonly seen issues 
 The following are commonly seen issues:
 
 1. The deployment will  take some time (including the allocation of the public IP for the loadbalancer) and the connection to the database can timeout. If you recieve a timeout when you navigate to teh publicIP of the LoadBalancer, try again in some time. 
@@ -117,7 +117,7 @@ Verify that your PODs are running correclty and do not report any errors/
 2. If your pods are in an unstable state, do not hesitate to delete them, the deployment controller will redeploy one container based on the template that has been created. 
 
 
-## Enable the connection to WordPress ##
+## Enable the connection to WordPress
 1. Verify that the PODs are running.
 
 ```yaml
@@ -140,7 +140,7 @@ wordpress    10.0.95.171    XX.XX.XX.XX   80:31104/TCP   6m
 
 3. Access the IP that has been allocated to the wordpress service with a browser and verify that you can access WordPress
 
-## Going further ##
+## Going further
 Congratulations, you have reached the end of this series of exercises to learn Kubernetes ! 
 You can explore the following topics:
 - *NameSpace*: [https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
