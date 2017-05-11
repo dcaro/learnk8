@@ -14,8 +14,8 @@ At the end of this exercise, launch MySQL workbench and connect to your deployed
 **Note:** At the time this exercise is being written, **storageClassName** is not supported on Azure and you will have to use **annotations**
 
 
-<u>Assessment</u>: Connect to MySQL with myworkbench and verify that the connection works with the password stored in the file.
+<u>**Assessment**</u>: Connect to MySQL with myworkbench and verify that the connection works with the password stored in the file.
 
-<u>Estimated time</u>: 45 minutes 
+<u>**Estimated time**</u>: 60 minutes 
 
-<u>Solution</u>: If you need help, you can find the solution of this exercise here: []()
+<u>**Solution**</u>: If you need help, you can find the solution of this exercise here: [solutions/lab4](../solutions/lab4/README.md)

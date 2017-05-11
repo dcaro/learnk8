@@ -104,7 +104,7 @@ Verify that your MySQL instance is running by running
 
 ```kubectl get pods```
 
-## Commonly seen mistakes ## 
+## Commonly seen mistakes
 The following are commonly seen mistake:
 
 1. YAML is very sensitive to indentation, do not use "tab" in your files and use "space" instead.
@@ -140,7 +140,7 @@ It might take a few minutes in a `<pending>` state before the IP address is succ
 ```kubectl delete pods,services -l app=wordpress```
 
 
-## Learn more ##
+## Learn more 
 
 You can learn more about kubernetes services at the following location [https://kubernetes.io/docs/concepts/services-networking/service/](https://kubernetes.io/docs/concepts/services-networking/service/)
 

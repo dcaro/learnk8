@@ -11,8 +11,8 @@ At the end of this exercise, launch MySQL workbench and connect to your deployed
 * Review the concept of a Deployment in the tutorial: [https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-intro/](https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-intro/)
 * Further details about the Deployments: [https://kubernetes.io/docs/concepts/workloads/controllers/deployment/](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
-<u>Assessment</u>: Connect to MySQL with myworkbench and verify that the connection works with the password stored in the file.
+<u>**Assessment**</u>: Connect to MySQL with myworkbench and verify that the connection works with the password stored in the file.
 
-<u>Estimated time</u>: 30 minutes 
+<u>**Estimated time**</u>: 30 minutes 
 
-<u>Solution</u>: If you need help, you can find the solution of this exercise here: []()
+<u>**Solution**</u>: If you need help, you can find the solution of this exercise here: [solutions/lab3](../solutions/lab3/README.md)
