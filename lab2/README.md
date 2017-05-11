@@ -6,7 +6,7 @@ This exercice is about using a password for the MySQL database that is not expos
 
 **Note**: You are not expected to use persistent volumes.
 
-At the end of this exercise, launch MySQL workbench and connect to your deployed instance to verify that you can connect with your secrets. Keep in mind that you will have to expose your mysql server to a public endpoint.
+At the end of this exercise, launch [MySQL workbench](https://dev.mysql.com/downloads/workbench/) and connect to your deployed instance to verify that you can connect with your secrets. Keep in mind that you will have to expose your mysql server to a public endpoint.
 
 <u>Resources</u>: 
 * Review how to create your own secrets in Kubernetes: [https://kubernetes.io/docs/concepts/configuration/secret/#creating-your-own-secrets](https://kubernetes.io/docs/concepts/configuration/secret/#creating-your-own-secrets)
