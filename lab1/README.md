@@ -8,7 +8,7 @@ To complete this exercise you have to deploy MySQL on Kubernetes, using a templa
 
 **Note**: You are not expected to use persistent volumes nor managing the secrets.
 
-At the end of this exercise, launch MySQL workbench and connect to your deployed instance to verify that you can connect with the user name and password that you have created. Keep in mind that you will have to expose your mysql server to a public endpoint.
+At the end of this exercise, launch [MySQL workbench](https://dev.mysql.com/downloads/workbench/) and connect to your deployed instance to verify that you can connect with the user name and password that you have created. Keep in mind that you will have to expose your mysql server to a public endpoint.
 
 
 <u>Resources</u>: 
