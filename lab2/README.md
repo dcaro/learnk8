@@ -13,8 +13,8 @@ At the end of this exercise, launch MySQL workbench and connect to your deployed
 * Understand the options available to create secrets in Kubernetes:
 [https://kubernetes.io/docs/concepts/configuration/secret/#creating-a-secret-manually](https://kubernetes.io/docs/concepts/configuration/secret/#creating-a-secret-manually)
 
-<u>Assessment</u>: Connect to MySQL with myworkbench and verify that the connection works with the password stored in the file.
+<u>**Assessment**</u>: Connect to MySQL with myworkbench and verify that the connection works with the password stored in the file.
 
-<u>Estimated time</u>: 30 minutes 
+<u>**Estimated time**</u>: 30 minutes 
 
-<u>Solution</u>: If you need help, you can find the solution of this exercise here: []()
+<u>**Solution**</u>: If you need help, you can find the solution of this exercise here: [solutions/lab2](../solutions/lab2/README.md)
