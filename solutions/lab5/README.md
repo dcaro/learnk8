@@ -44,7 +44,7 @@ spec:
   type: LoadBalancer
 ```
 
-2. Crreate a persistent volume claim to store the apache documents on a reliable location
+2. Create a persistent volume claim to store the apache documents on a reliable location
 
 ```yaml
 kind: PersistentVolumeClaim
@@ -63,7 +63,7 @@ spec:
       storage: 10Gi
 ```
 
-3. Add a deployment for wordpress that uses a volume on the PersistentVolumeClaim that is define above and point at the mysql instance that has been deployed previously:
+3. Add a deployment for wordpress that uses a volume on the PersistentVolumeClaim that is defined above and point at the mysql instance that has been deployed previously:
 
 ```yaml
 kind: Deployment
@@ -112,13 +112,13 @@ spec:
 ## Commonly seen issues 
 The following are commonly seen issues:
 
-1. The deployment will  take some time (including the allocation of the public IP for the loadbalancer) and the connection to the database can timeout. If you recieve a timeout when you navigate to teh publicIP of the LoadBalancer, try again in some time. 
-Verify that your PODs are running correclty and do not report any errors/
+1. The deployment will take some time (including the allocation of the public IP for the loadbalancer) and the connection to the database can timeout. If you recieve a timeout when you navigate to the publicIP of the LoadBalancer, try again after some time. 
+Verify that your pods are running correclty and do not report any errors/
 2. If your pods are in an unstable state, do not hesitate to delete them, the deployment controller will redeploy one container based on the template that has been created. 
 
 
 ## Enable the connection to WordPress
-1. Verify that the PODs are running.
+1. Verify that the pods are running.
 
 ```yaml
 kubectl get pods
