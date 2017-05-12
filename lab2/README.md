@@ -4,7 +4,7 @@ This exercice is about using a password for the MySQL database that is not expos
 - You have two options to achieve this lab. Select the one that you prefer, in the solution we will provide both.
 - The password shall not appear in the file describing the application.
 
-**Note**: You are not expected to use persistent volumes.
+**Note**: You are not expected to use secrets as files.
 
 At the end of this exercise, launch [MySQL workbench](https://dev.mysql.com/downloads/workbench/) and connect to your deployed instance to verify that you can connect with your secrets. Keep in mind that you will have to expose your mysql server to a public endpoint.
 
