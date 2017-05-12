@@ -18,15 +18,22 @@ apiVersion: extensions/v1beta1
 
 ```yaml
 spec:
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
         app: wordpress
+        tier: mysql
     spec:
       containers:
       - name: mysql
         image: mysql:8.0.1
 ```
+
+The strategy indicates how the Pods that are already deployed with will be replaced with the new ones. 
+We are using the ```Recreate``` strategy that kills the existing pods before deploying the new ones.
+
 
 3. Deploy the MySQL application using the same command than you have been using previously. 
 
@@ -59,5 +66,6 @@ The **EXTERNAL-IP** is the public IP that you can use to connect to your server 
 
 ## Learn more ##
 
-You can learn more about kubernetes deployments at the following location [https://kubernetes.io/docs/concepts/workloads/controllers/deployment/](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+* You can learn more about kubernetes deployments at the following location [https://kubernetes.io/docs/concepts/workloads/controllers/deployment/](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+* Take a closer look at the different strategies that are available for the deployments.
 

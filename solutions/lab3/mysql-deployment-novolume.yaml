@@ -17,13 +17,15 @@ apiVersion: extensions/v1beta1
 metadata:
   name: mysql
   labels:
-    tier: mysql
     app: wordpress
 spec:
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
         app: wordpress
+        tier: mysql
     spec:
       containers:
       - name: mysql
