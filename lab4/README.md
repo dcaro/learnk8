@@ -1,6 +1,8 @@
 # Exercise 4 - Add persistent storage to store the MySQL database #
 
-The challenge with containers is that the files that are writte within the container are ephemeral and will be lost when the container restarts. In this exercise you will use persistent volumes to add non ephemeral storage in Azure to store the MySQL database.
+The challenge with containers is that  files written within the container are ephemeral and will be lost when the container stops. 
+In this exercise you will use persistent volumes to add non ephemeral storage in Azure to store the MySQL database.  
+Only one node should be able to access this storage at one time.  
 
 At the end of this exercise, launch MySQL workbench and connect to your deployed instance to verify that you can connect with your secrets. Keep in mind that you will have to expose your mysql server to a public endpoint.
 
