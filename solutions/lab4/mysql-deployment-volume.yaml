@@ -1,0 +1,82 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1beta1
+metadata:
+  name: slow
+provisioner: kubernetes.io/azure-disk
+parameters:
+  skuName: Standard_LRS
+  location: westus
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql-pv
+  annotations:
+    volume.beta.kubernetes.io/storage-class: slow
+  labels:
+    app: wordpress
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+  labels:
+    app: wordpress
+spec:
+  ports:
+  - port: 3306
+    targetPort: 3306
+  selector:
+    app: wordpress
+    tier: mysql
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: mysql
+  labels:
+    app: wordpress
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.6
+        ports:
+          - containerPort: 3306         
+            protocol: TCP
+            name: mysql
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: mysqlvolume
+        env: 
+        - name: "MYSQL_ROOT_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        - name: "MYSQL_DATABASE"
+          value: "sample"
+        - name: "MYSQL_USER"
+          value: "mysql"
+        - name: "MYSQL_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+      volumes: 
+      - name: mysqlvolume
+        persistentVolumeClaim:
+          claimName: mysql-pv

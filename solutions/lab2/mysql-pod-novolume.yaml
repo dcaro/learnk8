@@ -1,0 +1,44 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+  labels:
+    app: wordpress
+spec:
+  ports:
+  - port: 3306
+    targetPort: 3306
+  selector:
+    app: wordpress
+    tier: mysql
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mysql
+  labels:
+    tier: mysql
+    app: wordpress
+spec:
+  containers:
+  - name: mysql
+    image: mysql:8.0.1
+    ports:
+      - containerPort: 3306         
+        protocol: TCP
+        name: mysql
+    env: 
+    - name: "MYSQL_ROOT_PASSWORD"
+      valueFrom:
+        secretKeyRef:
+          name: mysql-pass
+          key: password
+    - name: "MYSQL_DATABASE"
+      value: "sample"
+    - name: "MYSQL_USER"
+      value: "mysql"
+    - name: "MYSQL_PASSWORD"
+      valueFrom:
+        secretKeyRef:
+          name: mysql-pass
+          key: password
