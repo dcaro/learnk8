@@ -12,6 +12,7 @@ At the end of this exercise, launch [MySQL workbench](https://dev.mysql.com/down
 
 
 <u>Resources</u>: 
+* Create your Kubernetes Cluster by following the steps described here:  [https://docs.microsoft.com/en-us/azure/container-service/container-service-kubernetes-walkthrough](https://docs.microsoft.com/en-us/azure/container-service/container-service-kubernetes-walkthrough)
 * Review the pod definition, db-pod.yml file in the HOL [https://github.com/Azure/acs-demos/tree/master/training/kubernetes#db-podyml](https://github.com/Azure/acs-demos/tree/master/training/kubernetes#db-podyml)
 * Understand the environment variables required by the MySQL container by reading the container documentation [https://hub.docker.com/_/mysql/](https://hub.docker.com/_/mysql/)
 * Review the definition of a service:[https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook#define-a-service](https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook#define-a-service)
