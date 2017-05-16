@@ -32,13 +32,24 @@ This creates a secret called ```mysql-pass```and the password will be stored in 
 
 The ```Data``` field should show onl one entry called ```password``` corresponding to the command executed on step 2.
 
-4. Deploy the MySQL application using the same command than you have been using in exercise 1. 
+4. Add a reference to the secret that you have just published by changing how the ```MYSQL_PASSORD``` is defined: 
+
+```yaml
+- name: "MYSQL_PASSWORD"
+    valueFrom:
+    secretKeyRef:
+        name: mysql-pass
+        key: password
+```
+
+This makes the pod look for the value of the password in the Kubernetes cluster secrets. It allows separation of responsabilities and higher confidentiality of those secrests.
+
+5. Deploy the MySQL application using the same command than you have been using in exercise 1. 
 
 
 ## Commonly seen mistakes ## 
-The following are commonly seen mistake:
 
-
+This will be extended as student report issues with this lab. At this time, no common issues have been identified.
 
 ## Enable the connection with MySQL workbench ##
 With the configuration of your application as indicated in the associated solution, the MySQL instance is only accessible from within the cluster. to be able to connect to it, you will need to change the type of your service as follows.
