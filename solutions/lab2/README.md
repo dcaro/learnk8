@@ -32,6 +32,7 @@ This creates a secret called ```mysql-pass```and the password will be stored in 
 
 The ```Data``` field should show onl one entry called ```password``` corresponding to the command executed on step 2.
 
+
 4. Add a reference to the secret that you have just published by changing how the ```MYSQL_PASSORD``` is defined: 
 
 ```yaml
