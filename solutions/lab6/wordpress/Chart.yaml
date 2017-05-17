@@ -1,0 +1,8 @@
+apiVersion: v1
+description: A WordPress chart for Kubernetes
+name: wordpress
+version: 0.1.0
+maintainers:
+  - name: Damien Caro 
+    email: dcaro@microsoft.com
+    

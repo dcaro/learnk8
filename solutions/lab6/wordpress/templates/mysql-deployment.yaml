@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: wordpress
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: "{{ .Values.mysql.image.repository }}:{{ .Values.mysql.image.tag}}"
+        ports:
+        - containerPort: 3306         
+          protocol: TCP
+          name: mysql
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: mysqlvolume
+        env: 
+        - name: "MYSQL_ROOT_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        - name: "MYSQL_DATABASE"
+          value: {{.Values.mysql.database.dbname}}
+        - name: "MYSQL_USER"
+          value: {{.Values.mysql.database.dbuser}}
+        - name: "MYSQL_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+      volumes: 
+      - name: mysqlvolume
+        persistentVolumeClaim:
+          claimName: {{ .Values.mysql.persistentvolumeclaim.name }}

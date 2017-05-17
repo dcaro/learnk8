@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  type: {{ .Values.wp.service.type }}
+  ports:
+    - port: {{ .Values.wp.service.port }}
+  selector:
+    app: wordpress
+    tier: frontend
+  type: LoadBalancer

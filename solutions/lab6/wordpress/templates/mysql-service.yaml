@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.mysql.service.name }}
+  labels:
+    app: wordpress
+spec:
+  type: {{ .Values.mysql.service.type }}
+  ports:
+  - port: {{ .Values.mysql.service.port }}
+    targetPort: {{ .Values.mysql.service.targetport }}
+  selector:
+    app: wordpress
+    tier: mysql

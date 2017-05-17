@@ -1,0 +1,36 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: {{ .Values.wp.service.name }}
+  labels:
+    app: wordpress
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: frontend
+    spec:
+      containers:
+      - name: wordpress
+        image: "{{ .Values.wp.image.repository }}:{{ .Values.wp.image.tag }}"
+        ports:
+          - containerPort: 80
+            name: wordpress
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: wordpressvolume
+        env: 
+        - name: "WORDPRESS_DB_HOST"
+          value: {{.Values.mysql.service.name}}
+        - name: "WORDPRESS_DB_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+      volumes: 
+      - name: wordpressvolume
+        persistentVolumeClaim:
+          claimName: {{.Values.wp.persistentvolumeclaim.name}}
