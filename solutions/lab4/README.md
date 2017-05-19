@@ -56,6 +56,13 @@ spec:
 The documentation indicates to use the property **StorageClass** however at the time of the writting of this exercise, Azure requires the use of **annotations**. This code will create a vhd file of the specified size in the Azure storage account that you have specified in the definition of the storageClass or will take the one that matches the best the location and skuName combination.
 Additional details available here: [https://kubernetes.io/docs/concepts/storage/persistent-volumes/#azure-disk](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#azure-disk)
 
+When you provision PersistentVolumeClaim, you can look at their status by running the following command: 
+
+```kubectl get pvc ```
+
+**Note**: Allocation persistent volume claims may take some time in Azure at the time this lab is being witten.
+
+
 3. Add a volume in the definition of your deployment that will leverage the persisten volume claim that we have created before.
 At the end of your deployment add the following code:
 
