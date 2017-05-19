@@ -100,7 +100,7 @@ spec:
       storage: {{.Values.mysql.persistentvolumeclaim.size }}
 ```
 
-7. Repeat the same process for each of the files that have been identified above in the chart definition. You can look at each files individually here [solutions/lab6/wordpress](../solutions/lab6/wordpress/values.yaml)
+7. Repeat the same process for each of the files that have been identified above in the chart definition. You can look at each files individually here [solutions/lab6/wordpress](./wordpress/)
 
 
 8. Deploy WordPress by using helm
