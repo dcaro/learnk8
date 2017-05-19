@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .Values.mysql.persistentvolumeclaim.name }}
+  annotations:
+    volume.beta.kubernetes.io/storage-class: {{ .Values.storage.classname }}
+  labels:
+    app: wordpress
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{.Values.mysql.persistentvolumeclaim.size }}
