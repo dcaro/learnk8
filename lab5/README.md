@@ -1,4 +1,4 @@
-# Exercise 5 - Adding wordpress to the deployemnt #
+# Exercise 5 - Adding wordpress to the deployment #
 
 In this exercise you are asked to deploy Wordpress on your Kubernetes cluster. This deployment of Wordpress shall use the MySQL deployment that you have done in the previous exercises and the website shall be resilient to container outages should they happen.
 
