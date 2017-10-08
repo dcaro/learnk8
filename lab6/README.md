@@ -10,6 +10,8 @@ At the end of this exercise, you must be able to connect to your wordpress websi
 <u>Resources</u>: 
 * Learn how to create a Helm Chart: [https://github.com/kubernetes/helm/blob/master/docs/charts.md](https://github.com/kubernetes/helm/blob/master/docs/charts.md)
 * Another tutorial on Charts: [https://deis.com/blog/2016/getting-started-authoring-helm-charts/](https://deis.com/blog/2016/getting-started-authoring-helm-charts/)
+* An article about it: [https://medium.com/@pczarkowski/writing-your-first-helm-chart-f3433344f824](https://medium.com/@pczarkowski/writing-your-first-helm-chart-f3433344f824)
+* Draft is a tool made by Deis to simply create a helm package: [https://github.com/Azure/draft](https://github.com/Azure/draft)
 
 
 <u>**Assessment**</u>: Connect to your WordPress deployment and verify that you can create a website.
